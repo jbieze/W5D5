@@ -7,12 +7,9 @@ const reader = readline.createInterface({
 function addNumbers(sum, numsLeft, completionCallback) {
   if (numsLeft === 0) {
     reader.close();
-    return completionCallback();
+    return completionCallback(sum);
   }
 
-  function completionCallback() {
-    return console.log(`Total Sum: ${sum}`);
-  }
 
   if (numsLeft > 0) {
     reader.question("Gimme a number, dummy.", (response) => {
@@ -25,4 +22,4 @@ function addNumbers(sum, numsLeft, completionCallback) {
   }
 }
 
-addNumbers(0, 3, sum => console.log(`Total Sum: ${sum}`));
+addNumbers(0, 3, function (sum) { console.log(`Total Sum: ${sum}`);});
