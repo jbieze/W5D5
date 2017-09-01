@@ -35,5 +35,3 @@ class Clock {
    return this.printTime();
   }
 }
-
-const clock = new Clock();
